@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAEB - ONG</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; }
+    header { position: relative; width: 100%; height: auto; background: #007BFF; color: white; padding-top: 20px; }
+    .slider { position: relative; width: 100%; height: 60vh; overflow: hidden; }
+    .slider img { width: 100%; height: 100%; object-fit: cover; position: absolute; opacity: 0; transition: opacity 1s ease-in-out; }
+    .slider img.active { opacity: 1; }
+    nav { background: #007BFF; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+    nav ul li { position: relative; }
+    nav a { display: block; padding: 15px 20px; color: white; text-decoration: none; }
+    nav ul li:hover > ul { display: block; }
+    nav ul ul { display: none; position: absolute; top: 100%; left: 0; background: #0056b3; }
+    nav ul ul li { width: 200px; }
+    main { padding: 40px 20px; min-height: 400px; background: #ffffff; }
+    footer { background: #003366; color: white; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 20px; margin-top: 40px; }
+    .footer-col { flex: 1; padding: 10px; min-width: 250px; }
+    .footer-col h3 { margin-bottom: 10px; }
+    .footer-col a, .footer-col p { color: white; text-decoration: none; display: block; margin: 5px 0; }
+    .socials i { font-size: 24px; margin: 0 5px; }
+    .benevole-section {
+  background: #fff;
+  padding: 40px;
+  margin: 20px;
+ }
+
+    .benevole-form {
+    max-width: 600px;
+    margin: auto;
+    }
+
+    .benevole-form h2 {
+    margin-bottom: 20px;
+    color: #007BFF;
+    text-align: center;
+    }
+
+    .benevole-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    }
+
+    .benevole-form input,
+    .benevole-form textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    }
+
+    .benevole-form button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    }
+
+    .benevole-form button:hover {
+    background-color: #0056b3;
+    }
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="slider">
+      <img src="img/caeb Lokossa.jpg" class="active" alt="slide1">
+      <img src="img/caeb natti.jpg" alt="slide2">
+      <img src="img/CAEB Parakou.jpg" alt="slide3">
+      <img src="img/CAEB Parakou2.jpg" alt="slide4">
+      <img src="img/CAEB PORTO.jpg" alt="slide5">
+      <img src="img/image CAEB NATTI.jpeg" alt="slide6">
+      <img src="img/images CAEB DJOUGOU.jpeg" alt="slide7">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Nos actions</a>
+          <ul>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Éducation au développement</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Nos partenaires</a>
+          <ul>
+            <li><a href="#">Partenaires</a></li>
+            <li><a href="#">Devenir bénévole</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">À propos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="benevole-section">
+  <div class="benevole-form">
+    <h2>DEVENIR BENEVOLE</h2>
+    <form action="enregistrer_benevole.php" method="POST">
+      <input type="text" name="nom" placeholder="Nom et prénom (s)" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="telephone" placeholder="Téléphone : (ex: 00229 0195050670)" required>
+      <textarea name="motivation" rows="5" placeholder="Pourquoi souhaitez-vous devenir bénévole ?" required></textarea>
+      <button type="submit">S'inscrire</button>
+    </form>
+  </div>
+</section>
+
+
+  </main>
+
+
+
+  <footer>
+    <div class="footer-col">
+      <h3>CAEB</h3>
+      <p>Téléphone: +123456789</p>
+      <p>Siège national: Adresse ici</p>
+      <p>Email: contact@caeb.org</p>
+    </div>
+    <div class="footer-col">
+      <h3>Accès rapide</h3>
+      <a href="#">Accueil</a>
+      <a href="#">Nos actions</a>
+      <a href="#">Nos partenaires</a>
+      <a href="#">Contact</a>
+      <a href="#">À propos</a>
+    </div>
+    <div class="footer-col">
+      <h3>Suivez-nous</h3>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slider img');
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
